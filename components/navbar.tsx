@@ -83,7 +83,15 @@ export default () => {
             <Link href='/' className={router.pathname == '/' ? 'font-bold' : ''}>{t('navbar:home')}</Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href='/profil' className={router.pathname == '/profil' ? 'font-bold' : ''}>{t('navbar:profile')}</Link>
+            <Dropdown>
+              <Link href='/profil' className={router.pathname == '/profil' ? 'font-bold' : ''}>{t('navbar:profile')}</Link>
+              <Dropdown.Menu>
+                <Dropdown.Item className="">
+                 Test
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+
           </Menu.Item>
           <Menu.Item>
             <Link href='/tri-dharma' className={router.pathname == '/tri-dharma' ? 'font-bold' : ''}>{t('navbar:tri_dharma')}</Link>
