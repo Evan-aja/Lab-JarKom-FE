@@ -89,8 +89,25 @@ export default () => {
               <Input value={keperluan} onChange={e => setKeperluan(e.target.value)}
                 className='w-full' type='text' placeholder={t('form:purpose_placeholder')!} bordered required />
             </InputGroup>
-            <Button color='warning' className={`w-full lg:w-52 ${isLoading && 'loading'}`}>{t('button_send')}</Button>
+            <Button color='ghost' className={`bg-base w-full lg:w-52 ${isLoading && 'loading'}`}>{t('button_send')}</Button>
           </form>
+        </div>
+
+        <div className='container flex items-center justify-center'>
+          <ul className='my-12 mx-auto menu menu-vertical lg:menu-horizontal'>
+            <li className='hover:rounded-lg'>
+              <div className='mr-12'>
+                <img className='h-83' src='/static/pklskripsi.png'/>
+                <a>Pendaftaran Program PKL & Skripsi</a>
+              </div>
+            </li>
+            <li className='hover:rounded-lg'>
+              <div>
+                <img className='h-83' src='/static/peminjaman.png'/>
+                <a>Peminjaman dan Pengembalian</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </Content>
     </>
