@@ -5,6 +5,7 @@ import Jumbotron from '../../components/jumbotron'
 import Content from '../../components/content'
 import { t } from '../../lib/i18n'
 
+
 export default () => {
   const [email, setEmail] = useState('')
   const [nama, setNama] = useState('')
