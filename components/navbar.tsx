@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { t } from '../lib/i18n'
+import DropdownItem from "react-daisyui/dist/Dropdown/DropdownItem";
 
 export default () => {
   const router = useRouter()
@@ -84,11 +85,12 @@ export default () => {
           </Menu.Item>
           <Menu.Item>
             <Dropdown>
-              <Link href='/profil' className={router.pathname == '/profil' ? 'font-bold' : ''}>{t('navbar:profile')}</Link>
+              <a className="" >{t('navbar:profile')}</a>
               <Dropdown.Menu>
                 <Dropdown.Item className="">
-                 Test
+                  <Link href='/profil' className={router.pathname == '/profil' ? 'font-bold' : ''}>Profil Laboratorium</Link>
                 </Dropdown.Item>
+                <DropdownItem href='/' className={router.pathname == '/' ? 'font-bold' : ''}>Struktur Organisasi</DropdownItem>
               </Dropdown.Menu>
             </Dropdown>
 
