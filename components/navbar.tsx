@@ -8,28 +8,11 @@ import DropdownItem from "react-daisyui/dist/Dropdown/DropdownItem";
 export default () => {
   const router = useRouter()
 
-  const [textWhite, setTextWhite] = useState(true)
-
-  const changeTextColor = () => {
-    const gradient = document.getElementById('gradient')
-    const footer = document.getElementById('footer')
-    if (gradient === null || footer === null) return setTextWhite(true)
-
-    return gradient.getBoundingClientRect().top <= 0 && footer.getBoundingClientRect().top >= 32 ? setTextWhite(false) : setTextWhite(true)
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', changeTextColor)
-    return () => {
-      window.removeEventListener('scroll', changeTextColor)
-    }
-  }, [])
-
   return (
-    <Navbar className={'z-50 p-4 fixed backdrop-blur-md ' + (textWhite ? 'text-white' : 'text-base shadow-lg')} >
-      <Navbar.Start>
+    <Navbar className={'z-50 p-4 fixed bg-white'} >
+      <Navbar.Start className="w-2/12">
         <Dropdown>
-          <Button color='ghost' tabIndex={0} className='lg:hidden'>
+          <Button color='default' tabIndex={0} className='lg:hidden'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-5 w-5'
@@ -64,16 +47,16 @@ export default () => {
           </Dropdown.Menu>
         </Dropdown>
         <Link href='/' className='btn btn-ghost normal-case text-xl hidden lg:flex'>
-          <div className={`w-8 h-8 mr-3 duration-200 ${(textWhite ? 'bg-white' : 'bg-base')}`} style={{
+          <div className={`w-8 h-8 mr-3 duration-200`} style={{
             mask: 'url("/static/logo.svg") no-repeat center',
             WebkitMask: 'url("/static/logo.svg") no-repeat center',
           }} />
           {t('app_name_short')}
         </Link>
       </Navbar.Start>
-      <Navbar.End>
+      <Navbar.End className="w-10/12 items-stretch">
         <Link href='/' className='btn btn-ghost normal-case text-xl flex lg:hidden'>
-          <div className={`w-8 h-8 mr-3 duration-200 ${(textWhite ? 'bg-white' : 'bg-base')}`} style={{
+          <div className={`w-8 h-8 mr-3 duration-200`} style={{
             mask: 'url("/static/logo.svg") no-repeat center',
             WebkitMask: 'url("/static/logo.svg") no-repeat center',
           }} />
@@ -83,18 +66,13 @@ export default () => {
           <Menu.Item>
             <Link href='/' className={router.pathname == '/' ? 'font-bold' : ''}>{t('navbar:home')}</Link>
           </Menu.Item>
-          <Menu.Item>
-            <Dropdown>
-              <a className="" >{t('navbar:profile')}</a>
-              <Dropdown.Menu>
-                <Dropdown.Item className="">
-                  <Link href='/profil' className={router.pathname == '/profil' ? 'font-bold' : ''}>Profil Laboratorium</Link>
-                </Dropdown.Item>
-                <DropdownItem href='/' className={router.pathname == '/' ? 'font-bold' : ''}>Struktur Organisasi</DropdownItem>
-              </Dropdown.Menu>
-            </Dropdown>
-
-          </Menu.Item>
+          <div className="dropdown dropdown-hover">
+            <label tabIndex={0} className="btn btn-ghost normal-case m-1 bg-base/0 outline-0">{t('navbar:profile')}</label>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li className="bg-amber-700 w-120"><Link href='/profil' className={router.pathname == '/profil' ? 'font-bold' : ''}>{t('navbar:profile')}</Link></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
           <Menu.Item>
             <Link href='/tri-dharma' className={router.pathname == '/tri-dharma' ? 'font-bold' : ''}>{t('navbar:tri_dharma')}</Link>
           </Menu.Item>
