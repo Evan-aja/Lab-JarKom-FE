@@ -23,6 +23,9 @@ module.exports = {
       opacity:{
         '35' : '0.35',
       },
+      fontFamily:{
+      'poppins': ['Poppins', 'sans-serif']
+      },
     },
   },
   plugins: [

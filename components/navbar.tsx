@@ -9,10 +9,10 @@ export default () => {
   const router = useRouter()
 
   return (
-    <Navbar className={'z-50 p-4 fixed bg-white'} >
+    <Navbar className={'z-50 p-4 fixed bg-white text-poppins'} >
       <Navbar.Start className="w-2/12">
         <Dropdown>
-          <Button color='default' tabIndex={0} className='lg:hidden'>
+          <Button color='info' tabIndex={0} className='lg:hidden'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-5 w-5'
@@ -66,21 +66,21 @@ export default () => {
           <Menu.Item>
             <Link href='/' className={router.pathname == '/' ? 'font-bold' : ''}>{t('navbar:home')}</Link>
           </Menu.Item>
-          <div className="dropdown dropdown-hover">
-            <label tabIndex={0} className="btn btn-ghost normal-case m-1 bg-base/0 outline-0">{t('navbar:profile')}</label>
+          <div className="dropdown dropdown-hover hover:text-base">
+            <label tabIndex={0} className="btn btn-ghost normal-case font-poppins font-medium m-1 bg-base/0 outline-0">{t('navbar:profile')}</label>
             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
               <li className="bg-amber-700 w-120"><Link href='/profil' className={router.pathname == '/profil' ? 'font-bold' : ''}>{t('navbar:profile')}</Link></li>
               <li><a>Item 2</a></li>
             </ul>
           </div>
           <Menu.Item>
-            <Link href='/tri-dharma' className={router.pathname == '/tri-dharma' ? 'font-bold' : ''}>{t('navbar:tri_dharma')}</Link>
+            <Link href='/tri-dharma' className={router.pathname == '/tri-dharma' ? 'font-base' : ''}>{t('navbar:tri_dharma')}</Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href='/layanan' className={router.pathname == '/layanan' ? 'font-bold' : ''}>{t('navbar:services')}</Link>
+            <Link href='/layanan' className={router.pathname == '/layanan' ? 'font-base' : ''}>{t('navbar:services')}</Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href='/kontak' className={router.pathname == '/kontak' ? 'font-bold' : ''}>{t('navbar:contacts')}</Link>
+            <Link href='/kontak' className={router.pathname == '/kontak' ? 'font-base' : ''}>{t('navbar:contacts')}</Link>
           </Menu.Item>
         </Menu>
       </Navbar.End>
