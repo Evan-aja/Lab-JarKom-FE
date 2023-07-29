@@ -11,7 +11,7 @@
     },
     "title": "Presensi",
     "subtitle": "Masuk Laboratorium",
-    "heading": "Silakan isi Presensi"
+    "heading": "Silakan Isi Presensi"
   },
   "borrow": {
     "item": {
@@ -38,5 +38,14 @@
     "title": "Pengembalian",
     "subtitle": "Barang Laboratorium",
     "heading": "Data Pengembalian"
+  },
+  "registerpklskripsi": {
+    "item": {
+      "title": "Pendaftaran Program PKL dan SKRIPSI",
+      "description": "Pendaftaran ..."
+    },
+    "title": "Pendaftaran",
+    "subtitle": "Program PKL dan SKRIPSI",
+    "heading": "Silahkan Isi Data Diri Anda"
   }
 }
