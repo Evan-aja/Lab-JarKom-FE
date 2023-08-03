@@ -16,16 +16,21 @@ module.exports = {
         cyan: '#0f4350',
         darkGrey: '#515151',
         grey : '#5C5C5C',
+        ylw : '#FFB703'
       },
       scale: {
         '101': '1.015',
       },
       opacity:{
         '35' : '0.35',
+        '65' : '0.65'
       },
       fontFamily:{
       'poppins': ['Poppins', 'sans-serif']
       },
+      fontSize:{
+
+      }
     },
   },
   plugins: [

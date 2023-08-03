@@ -49,7 +49,7 @@ export default () => {
   return (
     <footer id='footer'>
       <div className="bg-[url('/static/footer.jpg')] bg-cover bg-center">
-        <div className='backdrop-blur-sm p-8 lg:p-16 xl:p-40 backdrop-brightness-75'>
+        <div className='backdrop-blur-sm p-8 backdrop-filter lg:p-16 xl:p-40 backdrop-brightness-75'>
           <div className='lg:w-3/4 xl:w-1/2'>
             <p className='text-white font-bold text-2xl lg:text-5xl drop-shadow-[5px_5px_10px_rgba(0,0,0,0.25)] mb-6'>{t('footer:title')}</p>
             <p className='text-white text-lg lg:text-xl mb-8'>{t('footer:subtitle')}</p>
