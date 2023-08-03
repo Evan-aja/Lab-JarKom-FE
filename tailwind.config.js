@@ -11,13 +11,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        base: '#005679',
+        base: '#1090CB',
         baseDark: '#002940',
         cyan: '#0f4350',
+        darkGrey: '#515151',
+        grey : '#5C5C5C',
+        ylw : '#FFB703'
       },
       scale: {
         '101': '1.015',
       },
+      opacity:{
+        '35' : '0.35',
+        '65' : '0.65'
+      },
+      fontFamily:{
+      'poppins': ['Poppins', 'sans-serif']
+      },
+      fontSize:{
+
+      }
     },
   },
   plugins: [
@@ -28,8 +41,8 @@ module.exports = {
       {
         light: {
           ...require('daisyui/src/colors/themes')['[data-theme=light]'],
-          primary: '#005679',
-          'primary-focus': '#106689',
+          primary: '#1090CB',
+          'primary-focus': '#29b3f1',
         },
       },
     ],

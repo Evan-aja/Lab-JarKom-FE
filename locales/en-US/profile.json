@@ -2,5 +2,9 @@
   "title": "Laboratory Members",
   "subtitle": "$t(homepage:subtitle)",
   "description": "Members of the Information-Based Network Laboratory consist of the head of the Laboratory with the assistance of several lecturers and students. On average, lecturers who are members of this laboratory are Network Engineering and Cloud Computing stream lecturers.",
-  "button": "Our Profile"
+  "button": "Our Profile",
+  "title-profile": "About Us",
+  "subtitle-profile": "Achievements, Accomplishments, and Awards",
+  "desc-profile" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac mauris vitae massa hendrerit volutpat. Etiam mollis cursus viverra. Integer cursus felis dolor, vitae fringilla dolor tempor vitae. Etiam rutrum viverra elit, at dignissim nunc cursus sit amet. Sed purus justo, pharetra id risus in, interdum mattis diam. Cras et urna accumsan, convallis sem consectetur, consequat lacus. Suspendisse vel laoreet risus. ",
+  "article-profile": "Article"
 }

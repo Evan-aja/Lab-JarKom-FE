@@ -2,5 +2,7 @@
   "title": "Laboratorium",
   "subtitle": "Jaringan Berbasis Informasi",
   "description": "Laboratorium Jaringan Berbasis Informasi merupakan salah satu laboratorium komputer yang memfokuskan diri pada bidang pengembangan jaringan berbasis informasi di Fakultas Ilmu Komputer Universitas Brawijaya (FILKOM UB).",
-  "about": "Tentang Kami"
+  "about": "Tentang Kami",
+  "profile" : "Profil Laboratorium",
+  "profiledesc" : "Laboratorium Jaringan Berbasis Informasi pada saat ini berfokus pada 4 topik penelitian, yaitu Jaringan Sensor dan Nirkabel, Sistem Terdistribusi dan Komputasi Awan, Kriptografi dan Keamanan Informasi, serta Teknologi Infrastruktur."
 }
