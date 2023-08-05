@@ -2,5 +2,7 @@
   "title": "Laboratory of",
   "subtitle": "Information-Based Network",
   "description": "The Information-Based Network Laboratory is one of the computer laboratories that focuses on the field of information-based network development at the Faculty of Computer Science, Universitas Brawijaya (FILKOM UB).",
-  "about": "About Us"
+  "about": "About Us",
+  "profile" : "Laboratory Profile",
+  "profiledesc" : "The Information-Based Network Laboratory currently focuses on four research topics, namely Wireless Sensor Networks, Distributed Systems and Cloud Computing, Cryptography and Information Security, and Infrastructure Technology."
 }

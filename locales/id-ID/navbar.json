@@ -1,7 +1,10 @@
 {
-  "home": "Home",
+  "home": "Beranda",
   "profile": "Profil",
+  "people" :  "Sumber Daya Manusia",
+  "achievement" : "Capaian Laboratorium",
+
   "tri_dharma": "Tri Dharma",
   "services": "Layanan",
-  "contacts": "Kontak"
+  "contacts": "Narahubung"
 }

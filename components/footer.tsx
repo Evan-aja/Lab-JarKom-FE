@@ -49,7 +49,7 @@ export default () => {
   return (
     <footer id='footer'>
       <div className="bg-[url('/static/footer.jpg')] bg-cover bg-center">
-        <div className='backdrop-blur-sm p-8 lg:p-16 xl:p-40 backdrop-brightness-75'>
+        <div className='backdrop-blur-sm p-8 backdrop-filter lg:p-16 xl:p-40 backdrop-brightness-75'>
           <div className='lg:w-3/4 xl:w-1/2'>
             <p className='text-white font-bold text-2xl lg:text-5xl drop-shadow-[5px_5px_10px_rgba(0,0,0,0.25)] mb-6'>{t('footer:title')}</p>
             <p className='text-white text-lg lg:text-xl mb-8'>{t('footer:subtitle')}</p>
@@ -67,19 +67,23 @@ export default () => {
           </div>
         </div>
       </div>
-      <Footer className='py-10 px-10 xl:px-44 bg-base bg-gradient-to-b from-[#ffffff20] via-transparent text-neutral-content text-lg'>
-        <div>
-          <Footer.Title>{t('footer:directory_title')}</Footer.Title>
-          <Link href='/' className='link link-hover'>{t('navbar:home')}</Link>
-          <Link href='/profil' className='link link-hover'>{t('navbar:profile')}</Link>
-          <Link href='/tri-dharma' className='link link-hover'>{t('navbar:tri_dharma')}</Link>
-          <Link href='/layanan' className='link link-hover'>{t('navbar:services')}</Link>
-          <Link href='/kontak' className='link link-hover'>{t('navbar:contacts')}</Link>
+      <Footer className='py-10 px-10 xl:px-44 bg-base/35 text-lg'>
+        <div className="">
+          <Footer.Title className="text-base/100">Logo</Footer.Title>
+          <p className="text-darkGrey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        </div>
+        <div className="xl:px-20">
+          <Footer.Title className="text-black">{t('footer:directory_title')}</Footer.Title>
+          <Link href='/' className='link link-hover text-darkGrey'>{t('navbar:home')}</Link>
+          <Link href='/profil' className='link link-hover text-darkGrey'>{t('navbar:profile')}</Link>
+          <Link href='/tri-dharma' className='link link-hover text-darkGrey'>{t('navbar:tri_dharma')}</Link>
+          <Link href='/layanan' className='link link-hover text-darkGrey'>{t('navbar:services')}</Link>
+          <Link href='/kontak' className='link link-hover text-darkGrey'>{t('navbar:contacts')}</Link>
         </div>
         <div>
-          <Footer.Title>{t('app_name')}</Footer.Title>
-          <p>{t('lab_address')}</p>
-          <p>{t('faculty_address')}</p>
+          <Footer.Title className="text-black">{t('footer:location_title')}</Footer.Title>
+          <p className="text-darkGrey">{t('lab_address')}</p>
+          <p className="text-darkGrey">{t('faculty_address')}</p>
           <div className='flex mt-2'>
             <Link href={{
               pathname: router.pathname,
@@ -96,8 +100,8 @@ export default () => {
           </div>
         </div>
       </Footer>
-      <div className='bg-base text-center p-8'>
-        <p className='text-white'>©{new Date().getFullYear()}. All Rights Reserved. by {t('app_name_short')} 2022</p>
+      <div className='bg-base/35 text-center p-8'>
+        <p className='text-darkGrey'>©{new Date().getFullYear()}. All Rights Reserved. by {t('app_name_short')} 2022</p>
       </div>
     </footer>
   )
