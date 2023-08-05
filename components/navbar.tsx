@@ -63,7 +63,7 @@ export default () => {
             <label tabIndex={0} className="btn btn-ghost normal-case font-poppins font-medium m-1 bg-base/0 outline-0">{t('navbar:profile')}</label>
             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
               <li className="bg-base text-white w-120 hover:text-base hover:bg-white"><a href='/profil' className={"w-full"}>{t('navbar:profile')}</a></li>
-              <li className={"bg-base text-white w-120 hover:text-base hover:bg-white"}><a className={"w-full"} href={"/profil"}>Item 2</a></li>
+              <li className={"bg-base text-white w-120 hover:text-base hover:bg-white"}><a className={"w-full"} href='/anggota'>{t("navbar:people")}</a></li>
             </ul>
           </div>
           <Menu.Item>
