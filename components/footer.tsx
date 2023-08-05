@@ -47,7 +47,7 @@ export default () => {
   }
 
   return (
-    <footer id='footer'>
+    <footer id='footer' className={"font-poppins"}>
       <div className="bg-[url('/static/footer.jpg')] bg-cover bg-center">
         <div className='backdrop-blur-sm p-8 backdrop-filter lg:p-16 xl:p-40 backdrop-brightness-75'>
           <div className='lg:w-3/4 xl:w-1/2'>

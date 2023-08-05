@@ -1,8 +1,13 @@
 import Jumbotron from '../components/jumbotron'
+import React from "react";
+import CardView from '../components/profile-card';
+import CardViewContainer from "../components/profile-card-container";
 
 import { t } from '../lib/i18n'
+import CardContainer from "../components/profile-card-container";
 
 export default () => {
+
   return (
     <>
       <div className={"px-8 lg:px-14 pt-[80px]"}>
@@ -36,7 +41,9 @@ export default () => {
                 <h2 className={"text-[40px] text-base font-poppins font-semibold"}>{t("profile:article-profile")}</h2>
             </div>
             <div className={"mt-14"}>
-
+                <div>
+                    <CardContainer />
+                </div>
             </div>
           </div>
       </div>
