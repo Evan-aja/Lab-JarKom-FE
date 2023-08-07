@@ -2,7 +2,7 @@ import Heading from '../components/heading'
 import Card from '../components/card'
 import CardContainer from '../components/card-container'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Kegiatan } from '../types/models'
 import { t } from '../lib/i18n'
 
@@ -89,29 +89,92 @@ export default () => {
       </div>
 
 
-      <div>
-        <h3 className='text-baseDark font-bold text-3xl'>{t('navbar:services')}</h3>
-        <div className='my-12 mx-auto'>
-          <div className='lg:flex justify-around'>
-            <Link href='/layanan/presensi'>
-              <div className='mb-16 flex flex-col items-center drop-shadow-sm duration-200 hover:scale-101'>
-                <img className='mb-6 h-64' src='/static/absen.png' alt='Presensi' />
-                <p className='font-semibold text-lg'>{t('services:attendance.item.title')}</p>
+      <div className={'my-14'}>
+        <h1 className={'font-poppins font-semibold text-3xl md:text-4xl text-base text-center'}>{t("navbar:services")}</h1>
+
+        <div className="xl:flex  font-poppins w-full items-center justify-center ">
+          <div className="flex justify-center">
+            <a className='lg:mr-12 mt-14 w-max md:flex btn btn-ghost md:h-24 md:text-lg' href={'/layanan/presensi'}>
+              <div className="flex h-10 w-10 md:h-20 md:w-20 mr-3 items-center justify-center object-cover">
+                <img className='' src='/static/presensi.png'/>
               </div>
-            </Link>
-            <Link href='/layanan/peminjaman'>
-              <div className='mb-16 flex flex-col items-center drop-shadow-sm duration-200 hover:scale-101'>
-                <img className='mb-6 h-64' src='/static/pinjam.png' alt='Pinjam' />
-                <p className='font-semibold text-lg'>{t('services:borrow.item.title')}</p>
-              </div>
-            </Link>
-            <Link href='/layanan/pengembalian'>
-              <div className='mb-16 flex flex-col items-center drop-shadow-sm duration-200 hover:scale-101'>
-                <img className='mb-6 h-64' src='/static/retur.png' alt='Retur' />
-                <p className='font-semibold text-lg'>{t('services:return.item.title')}</p>
-              </div>
-            </Link>
+              <span className={'normal-case'}>{t("services:attendance:title")}</span>
+            </a>
           </div>
+
+          <div className="flex justify-center">
+            <a className='lg:mr-12 mt-14 md:flex btn btn-ghost md:h-24 md:text-lg' href={'/'}>
+              <div className="flex h-10 w-10 md:h-20 md:w-20 mr-3 items-center justify-center object-cover">
+                <img className='' src='/static/pklskripsi.png'/>
+              </div>
+              <span className={'normal-case'}>{t("services:registerpklskripsi:item:title")}</span>
+            </a>
+          </div>
+
+          <div className="flex justify-center">
+            <a className=' mt-14 md:flex btn btn-ghost md:h-24 md:text-lg' href={'/'}>
+              <div className="flex h-10 w-10 md:h-20 md:w-20 mr-3 items-center justify-center object-cover">
+                <img className='' src='/static/peminjaman.png'/>
+              </div>
+              <span className={'normal-case'}>{t("services:borrow:item:title")}</span>
+            </a>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div className={'my-28 md:px-7 lg:px-14'}>
+        <div className="mb-14 flex items-center justify-center ">
+          <h1 className={'font-poppins font-semibold text-3xl md:text-4xl text-base'}>{t("homepage:partners")}</h1>
+        </div>
+        <div className="flex items-center justify-center w-full ">
+          <a href={'https://www.eba-consortium.asia/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/eba.png'}/>
+          </a>
+          <a href={'https://www.arena-pac.net/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/arenapac.png'}/>
+          </a>
+          <a href={'https://www.telkom.co.id/sites'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/telkom.png'}/>
+          </a>
+          <a href={'https://erasmus-plus.ec.europa.eu/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/erasmus-logo.png'}/>
+          </a>
+        </div>
+        <div className="flex items-center justify-center w-full">
+          <a href={'https://idren.id/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/idren.png'}/>
+          </a>
+          <a href={'https://www.redhat.com/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/redhat.png'}/>
+          </a>
+          <a href={'https://www.soi.asia/ai3-project/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/oip.png'}/>
+          </a>
+          <a href={'https://indosatooredoo.com/portal/id/indexpersonal'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/indosat.png'}/>
+          </a>
+        </div>
+        <div className="flex items-center justify-center w-full">
+          <a href={'https://www.keio.ac.jp/en/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/keio.png'}/>
+          </a>
+          <a href={'https://www.minova.id/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/mitra-inovasi.png'}/>
+          </a>
+          <a href={'https://kedaireka.id/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/kedaireka.png'}/>
+          </a>
+        </div>
+        <div className="flex items-center justify-center w-full">
+          <a href={'https://www.soi.asia/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/soi.png'}/>
+          </a>
+          <a href={'https://aws.amazon.com/id/training/awsacademy/'} className={'mx-3 lg:mx-5'}>
+            <img src={'/static/partnership/aws.png'}/>
+          </a>
+
         </div>
       </div>
     </>

@@ -7,15 +7,15 @@ export default () => {
   return (
     <>
       <div className={"pt-[90px] px-8 md:px-14 lg:px-28 mb-24"}>
-          <div className={"lg:flex lg:px-28"}>
+          <div className={"lg:flex"}>
             <div className={"flex items-center lg:w-1/2 lg:pr-7"}>
               <div className={"font-poppins my-14 lg:my-0"}>
-                  <h1 className='text-5xl lg:text-8xl font-bold mb-4 lg:mb-8'>{t("navbar:contacts")}</h1>
-                  <p className='mx-4 md:mx-20 lg:text-lg xl:mx-72 mb-8'>{"Silahkan menghubungi kami untuk mendapatkan informasi lebih lanjut."}</p>
+                  <h1 className='text-2xl lg:text-4xl font-bold mb-4 lg:mb-8 text-base'>{t("navbar:contacts")}</h1>
+                  <p className=' lg:text-lg  mb-8'>{"Silahkan menghubungi kami untuk mendapatkan informasi lebih lanjut."}</p>
               </div>
             </div>
             <div className="flex lg:w-1/2 lg:pl-7">
-              <img  src={"/static/maps.png"} className={""} alt={""}/>
+              <img  src={"/static/maps.png"} className={"object-cover"} alt={""}/>
             </div>
           </div>
           <div className={"mt-24 lg:flex w-full justify-between font-poppins"}>
