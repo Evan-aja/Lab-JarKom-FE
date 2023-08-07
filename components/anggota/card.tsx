@@ -15,16 +15,16 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ member }) => {
     return (
-        <div className="md:flex  px-8 lg:px-28 py-8 w-full my-8 border border-gray-500">
+        <div className="md:flex  px-8 xl:px-28 py-8 w-full my-8 border border-gray-500">
             <div className="flex md:w-1/6 items-center justify-center">
-                <div className="flex rounded-full">
-                    <img src={member.image} alt={member.name} className={"object-cover"}/>
+                <div className="aspect-[1/1] w-24 mb-4 md:mb-0 md:w-32 lg:w-48">
+                    <img src={member.image} alt={member.name} className={"object-cover rounded-full w-full h-full"}/>
                 </div>
             </div>
 
-            <div className={"border-r border-gray-300 hidden lg:block"}></div>
+            <div className={"border-r border-gray-300 hidden md:mx-8 md:block"}></div>
 
-            <div className="md:w-5/6 font-poppins pl-12">
+            <div className="md:w-5/6 font-poppins">
                 <h2 className="mb-4 font-semibold text-xl truncate lg:text-3xl">{member.name}</h2>
                 <p className="text-sm lg:text-xl break-words mb-2">{member.position}</p>
                 <p className="text-sm lg:text-xl break-words mb-2">{member.department}</p>

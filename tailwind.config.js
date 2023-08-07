@@ -30,11 +30,15 @@ module.exports = {
       },
       fontSize:{
 
+      },
+      aspectRatio:{
+        '3/2' : '3/2',
       }
     },
   },
   plugins: [
-    require('daisyui')
+    require('daisyui'),
+      require('@tailwindcss/aspect-ratio')
   ],
   daisyui: {
     themes: [
