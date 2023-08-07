@@ -65,7 +65,7 @@ export default () => {
         title={t('services:registerpklskripsi.title')}
         subtitle={t('services:registerpklskripsi.subtitle')} />
 
-      <Content>
+      <Content className={'font-poppins'}>
         <div>
           <h3 className='text-baseDark font-bold text-3xl mb-8'>{t('services:registerpklskripsi.heading')}</h3>
           <form onSubmit={handleSubmit} className='block text-center'>
@@ -95,28 +95,27 @@ export default () => {
                 className='w-full' type='text' placeholder={t('form:purpose_placeholder')!} bordered required />
             </InputGroup>
             <InputGroup className='mb-10'>
-              <span >{t('form:upload_cv')}</span>
+              <span className={'font-medium'}>{t('Curriculum Vitae')}</span>
               <FileUpload onFileChange={(uploadedFile) => setFile(uploadedFile)} /> {/* Gunakan komponen FileUpload */}
             </InputGroup>
-            <Button color='ghost' className={`bg-base w-full lg:w-52 ${isLoading && 'loading'}`}>{t('button_send')}</Button>
+            <Button color='ghost' className={`bg-base text-white hover:text-base w-full lg:w-52 ${isLoading && 'loading'}`}>{t('button_send')}</Button>
           </form>
         </div>
 
-        <div className='container flex items-center justify-center'>
-          <ul className='my-12 mx-auto menu menu-vertical lg:menu-horizontal'>
-            <li className='hover:rounded-lg'>
-              <div className='mr-12'>
-                <img className='h-83' src='/static/presensi.png'/>
-                <a>Presensi</a>
-              </div>
-            </li>
-            <li className='hover:rounded-lg'>
-              <div>
-                <img className='h-83' src='/static/peminjaman.png'/>
-                <a>Peminjaman dan Pengembalian</a>
-              </div>
-            </li>
-          </ul>
+        <div className="lg:flex  font-poppins w-full items-center justify-center ">
+          <a className='lg:mr-12 mt-14 md:flex btn btn-ghost lg:h-24 lg:text-lg' href={'/layanan/presensi'}>
+            <div className="flex h-10 w-10 md:h-20 md:w-20 mr-3 items-center justify-center object-cover">
+              <img className='' src='/static/presensi.png'/>
+            </div>
+
+            <span className={'normal-case'}>{t("services:attendance:item:title")}</span>
+          </a>
+          <a className=' mt-14 md:flex btn btn-ghost lg:h-24 lg:text-lg' href={'/'}>
+            <div className="flex h-10 w-10 md:h-20 md:w-20 mr-3 items-center justify-center object-cover">
+              <img className='' src='/static/peminjaman.png'/>
+            </div>
+            <span className={'normal-case'}>{t("services:borrow:item:title")}</span>
+          </a>
         </div>
       </Content>
     </>

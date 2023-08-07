@@ -38,5 +38,14 @@
     "title": "Returns",
     "subtitle": "Laboratory Goods",
     "heading": "Returns Data"
+  },
+  "registerpklskripsi": {
+    "item": {
+      "title": "Registration for Internship and Thesis Program",
+      "description": "Registration ..."
+    },
+    "title": "Registration",
+    "subtitle": "Internship and Thesis Program",
+    "heading": "Please Fill Out Your Personal Data"
   }
 }

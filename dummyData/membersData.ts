@@ -7,7 +7,7 @@ export const members = [
         "studyProgram": "Computer Science",
         "email": "john.doe@example.com",
         "isStudent": false,
-        "image": "https://example.com/lecturer1.jpg"
+        "image": "https://images.pexels.com/photos/86594/goat-animal-horns-black-and-white-86594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@ export const members = [
         "studyProgram": "Mathematics",
         "email": "jane.smith@example.com",
         "isStudent": false,
-        "image": "https://example.com/lecturer2.jpg"
+        "image": "https://images.pexels.com/photos/4420634/pexels-photo-4420634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
         "id": 3,
