@@ -1,5 +1,0 @@
--- AlterTable
-ALTER TABLE "anggota" ADD COLUMN     "tipe" INTEGER NOT NULL DEFAULT 2;
-
--- AlterTable
-ALTER TABLE "peminjaman" ADD COLUMN     "aktual_kembali" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

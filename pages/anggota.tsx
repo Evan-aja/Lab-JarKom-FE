@@ -1,10 +1,16 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CardList from "../components/anggota/card-list";
-import {members} from "../dummyData/membersData";
+import getMembers from "../lib/strapi/members";
 
+export default function Anggota() {
+  const [members, setMembers] = useState([]);
 
-export default () => {
+  useEffect(() => {
+    getMembers().then((res) => {
+      console.log(res);
+      setMembers(res);
+    });
+  }, []);
 
     return (
         <>
