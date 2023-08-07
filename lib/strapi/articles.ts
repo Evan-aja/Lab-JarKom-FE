@@ -1,7 +1,5 @@
-import { url } from "inspector";
 import { getStrapiURL } from "./helper";
 import qs from "qs";
-import { Kegiatan } from "../../types/models";
 
 export async function getListActivity() {
   const baseUrl = getStrapiURL(`/activities`);
