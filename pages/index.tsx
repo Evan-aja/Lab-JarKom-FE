@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Kegiatan } from "../types/models";
 import { t } from "../lib/i18n";
-import { getListActivity } from "../lib/strapi/articles";
+import { getListActivity } from "../lib/strapi/activities";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
