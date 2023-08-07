@@ -12,5 +12,7 @@
   "amount_placeholder": "Jumlah",
   "borrow_id": "Kode Peminjaman",
   "recipient_name": "Nama Penerima",
-  "add_button": "+ Tambah Barang"
+  "add_button": "+ Tambah Barang",
+  "upload_cv": "Upload CV",
+  "cv" : "Upload dalam bentuk PDF"
 }

@@ -5,6 +5,7 @@ import Jumbotron from '../../components/jumbotron'
 import Content from '../../components/content'
 import { t } from '../../lib/i18n'
 
+
 export default () => {
   const [email, setEmail] = useState('')
   const [nama, setNama] = useState('')
@@ -59,7 +60,6 @@ export default () => {
         <Jumbotron
             title={t('services:attendance.title')}
             subtitle={t('services:attendance.subtitle')} />
-
         <Content >
           <div className={'font-poppins'}>
             <h3 className='text-baseDark font-bold text-3xl mb-8 font-poppins'>{t('services:attendance.heading')}</h3>
