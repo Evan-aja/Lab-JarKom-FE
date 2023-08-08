@@ -1,5 +1,6 @@
 import Card from "./profile-card";
 import { Article } from "../lib/strapi/article";
+import { getImageURL } from "../lib/strapi/helper";
 
 interface CardContainerProps {
   articles: Article[];
@@ -15,7 +16,7 @@ const CardContainer: React.FC<CardContainerProps> = ({ articles }) => {
               key={article.id}
               id={article.id}
               title={article.title}
-              image={article.image}
+              image={getImageURL(article.image)}
               content={article.content}
               // link={`/article/${article.id}`}
               link=""
