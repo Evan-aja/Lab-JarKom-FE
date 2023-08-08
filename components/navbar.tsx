@@ -14,11 +14,11 @@ export default function CustomNavbar() {
         <Dropdown>
           <Button color="info" tabIndex={0} className="lg:hidden">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-5 w-5'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='white'
             >
               <path
                 strokeLinecap="round"
@@ -135,20 +135,20 @@ export default function CustomNavbar() {
               )}
             </Dropdown.Item>
             {isOpen && (
-              <>
-                <Dropdown.Item href="/layanan/presensi">
-                  {t("services:attendance:title")}
-                </Dropdown.Item>
-                <Dropdown.Item href="/layanan/peminjaman">
-                  {t("services:borrow:item:title")}
-                </Dropdown.Item>
-                <Dropdown.Item href="/layanan/pengembalian">
-                  {t("services:return:item:title")}
-                </Dropdown.Item>
-                <Dropdown.Item href="/layanan/pklskripsi">
-                  {t("services:registerpklskripsi:item:title")}
-                </Dropdown.Item>
-              </>
+                <>
+                  <Dropdown.Item href='/layanan/presensi'>
+                    {t('services:attendance:title')}
+                  </Dropdown.Item>
+                  <Dropdown.Item href='/layanan/coming-soon'>
+                    {t('services:borrow:item:title')}
+                  </Dropdown.Item>
+                  <Dropdown.Item href='/layanan/coming-soon'>
+                    {t('services:return:item:title')}
+                  </Dropdown.Item>
+                  <Dropdown.Item href='/layanan/pklskripsi'>
+                    {t('services:registerpklskripsi:item:title')}
+                  </Dropdown.Item>
+                </>
             )}
             <Dropdown.Item
               href="/kontak"
@@ -256,16 +256,16 @@ export default function CustomNavbar() {
               </li>
               <li className="bg-base text-white w-120 hover:text-base hover:bg-white">
                 <Link
-                  href="/layanan/peminjaman"
-                  className="w-max hover:bg-transparent"
+                    href="/coming-soon"
+                    className="w-max hover:bg-transparent"
                 >
                   {t("services:borrow:item:title")}
                 </Link>
               </li>
               <li className="bg-base text-white w-120 hover:text-base hover:bg-white">
                 <Link
-                  href="/layanan/pengembalian"
-                  className="w-max hover:bg-transparent"
+                    href="/coming-soon"
+                    className="w-max hover:bg-transparent"
                 >
                   {t("services:return:item:title")}
                 </Link>

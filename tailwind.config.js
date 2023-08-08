@@ -29,6 +29,10 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
       },
       fontSize: {},
+
+      backgroundImage:{
+        'hero-bg' : "url('/static/hero.png')"
+      },
     },
   },
   plugins: [require("daisyui")],
