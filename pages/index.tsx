@@ -79,20 +79,12 @@ export default function Home() {
             "bg-ylw/65 lg:w-4/5 right-0 rounded-tl-[200px] lg:px-28 mt-14 py-8"
           }
         >
-          <CardContainer title={t("navbar:tri_dharma")} href="/tri-dharma">
+          <CardContainer title={"Dokumentasi Kegiatan"} href="#">
             {posts.map((post, key) => (
-              // <Card
-              //   key={key}
-              //   width={"1/4"}
-              //   href={`/tri-dharma/${post.id}`}
-              //   title={post.judul}
-              //   description={post.deskripsi}
-              //   image={post.gambar}
-              // />
               <Card
                 key={key}
                 width={"1/4"}
-                href={`/tri-dharma/${post.id}`}
+                href={"#"}
                 title={post.title}
                 description={post.description}
                 image={post.image}

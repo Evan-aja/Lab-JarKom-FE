@@ -1,10 +1,10 @@
 // CardList.tsx
 
-import React, { useState } from 'react';
-import Card from './card';
-import DropdownFilter from './dropdown-filter';
-import SearchBar from './search-bar';
-import Pagination from './pagination';
+import React, { useState } from "react";
+import Card from "./card";
+import DropdownFilter from "./dropdown-filter";
+import SearchBar from "./search-bar";
+import Pagination from "./pagination";
 
 interface Member {
   id: number;
@@ -22,8 +22,8 @@ interface CardListProps {
 }
 
 const CardList: React.FC<CardListProps> = ({ members }) => {
-  const [selectedFilter, setSelectedFilter] = useState('all');
-  const [searchInput, setSearchInput] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState("all");
+  const [searchInput, setSearchInput] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleFilterChange = (filterValue: string) => {
@@ -41,16 +41,19 @@ const CardList: React.FC<CardListProps> = ({ members }) => {
   };
 
   // Apply filter based on selected option
-  const filteredMembers = selectedFilter === 'all'
-    ? members
-    : members.filter((member) => {
-        return (selectedFilter === 'students' && member.isStudent) ||
-          (selectedFilter === 'lecturers' && !member.isStudent);
-      });
+  const filteredMembers =
+    selectedFilter === "all"
+      ? members
+      : members.filter((member) => {
+          return (
+            (selectedFilter === "students" && member.isStudent) ||
+            (selectedFilter === "lecturers" && !member.isStudent)
+          );
+        });
 
   // Apply search filter based on search input
-  const searchedMembers = filteredMembers.filter(
-    (member) => member.name.toLowerCase().includes(searchInput.toLowerCase())
+  const searchedMembers = filteredMembers.filter((member) =>
+    member.name.toLowerCase().includes(searchInput.toLowerCase())
   );
 
   // Calculate pagination indices
@@ -63,28 +66,28 @@ const CardList: React.FC<CardListProps> = ({ members }) => {
   );
 
   return (
-      <div>
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2  md:mb-0 md:mr-2">
-            <DropdownFilter
-                selectedOption={selectedFilter}
-                onFilterChange={handleFilterChange}
-            />
-          </div>
-          <div className="md:w-1/2">
-            <SearchBar onSearch={handleSearch} />
-          </div>
+    <div>
+      <div className="flex flex-col md:flex-row">
+        <div className="md:w-1/2  md:mb-0 md:mr-2">
+          <DropdownFilter
+            selectedOption={selectedFilter}
+            onFilterChange={handleFilterChange}
+          />
         </div>
-        {currentMembers.map((member) => (
-            <Card key={member.id} member={member} />
-        ))}
-        <Pagination
-            totalCards={searchedMembers.length}
-            cardsPerPage={cardsPerPage}
-            currentPage={currentPage}
-            onPageChange={handlePageChange}
-        />
+        <div className="md:w-1/2">
+          <SearchBar onSearch={handleSearch} />
+        </div>
       </div>
+      {currentMembers.map((member) => (
+        <Card key={member.id} member={member} />
+      ))}
+      <Pagination
+        totalCards={searchedMembers.length}
+        cardsPerPage={cardsPerPage}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
+    </div>
   );
 };
 
