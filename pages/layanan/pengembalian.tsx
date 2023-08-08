@@ -3,11 +3,11 @@ import { Button, Input, InputGroup } from "react-daisyui";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import Jumbotron from "../../components/jumbotron";
 import Content from "../../components/content";
 import { t } from "../../lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
+import ImageJumbotron from "../../components/image-jumbotron";
 
 export default function Pengembalian() {
   const [code, setCode] = useState("");
@@ -25,7 +25,7 @@ export default function Pengembalian() {
 
   return (
     <>
-      <Jumbotron
+      <ImageJumbotron
         title={t("services:return.title")}
         subtitle={t("services:return.subtitle")}
       />

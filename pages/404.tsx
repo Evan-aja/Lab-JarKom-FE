@@ -1,10 +1,10 @@
 import Card from "../components/card";
 import CardContainer from "../components/card-container";
 import Content from "../components/content";
-import Jumbotron from "../components/jumbotron";
 import { t } from "../lib/i18n";
 import { useEffect, useState } from "react";
 import { Kegiatan } from "../types/models";
+import ImageJumbotron from "../components/image-jumbotron";
 
 function Custom404() {
   const [posts, setPosts] = useState<Kegiatan[]>([]);
@@ -19,7 +19,7 @@ function Custom404() {
 
   return (
     <>
-      <Jumbotron
+      <ImageJumbotron
         title="404"
         subtitle={t("error:404_desc")}
         buttonText={t("error:404_button")}

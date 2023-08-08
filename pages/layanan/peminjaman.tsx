@@ -1,6 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Button, Input, InputGroup } from "react-daisyui";
-import Jumbotron from "../../components/jumbotron";
 import BarangInput from "../../components/barang-input";
 import Content from "../../components/content";
 import { GetServerSideProps } from "next";
@@ -10,6 +9,7 @@ import { toast } from "react-toastify";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import { t } from "../../lib/i18n";
+import ImageJumbotron from "../../components/image-jumbotron";
 
 interface BarangInput {
   barang?: Barang;
@@ -137,7 +137,7 @@ export default function Peminjaman({ data }: { data: APIResponse }) {
 
   return (
     <>
-      <Jumbotron
+      <ImageJumbotron
         title={t("services:borrow.title")}
         subtitle={t("services:borrow.subtitle")}
       />

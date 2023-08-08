@@ -1,4 +1,4 @@
-import {getStrapiURL} from "./helper";
+import { getStrapiURL } from "./helper";
 import qs from "qs";
 import delve from "dlv";
 
@@ -30,7 +30,14 @@ export default async function getListActivity(): Promise<Activity[]> {
     locale: ["en"],
   });
 
+  console.log(`${baseUrl}?${config}`);
+
   const result = await fetch(`${baseUrl}?${config}`).then((res) => res.json());
+
+  if (!result.data) {
+    console.error(result.error);
+    return [];
+  }
 
   return result.data.map((activity: any) => {
     return {
@@ -40,20 +47,20 @@ export default async function getListActivity(): Promise<Activity[]> {
       description: delve(activity, "attributes.description"),
 
       tags: activity.tags
-          ? activity.tags.map((tag: any) => delve(tag, "attributes.name"))
-          : [],
+        ? activity.tags.map((tag: any) => delve(tag, "attributes.name"))
+        : [],
 
       article: activity.article
-          ? activity.article.map((article: any) =>
-              delve(article, "attributes.title")
+        ? activity.article.map((article: any) =>
+            delve(article, "attributes.title")
           )
-          : [],
+        : [],
 
       member_lists: activity.member_lists
-          ? activity.member_lists.map((member: any) =>
-              delve(member, "attributes.name")
+        ? activity.member_lists.map((member: any) =>
+            delve(member, "attributes.name")
           )
-          : [],
+        : [],
     };
   });
 }

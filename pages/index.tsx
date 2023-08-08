@@ -5,16 +5,20 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
 import getListActivity, { Activity } from "../lib/strapi/activity";
+import { InferGetServerSidePropsType } from "next";
 
-export default function Home() {
-  const [posts, setPosts] = useState<Activity[]>([]);
+export async function getServerSideProps() {
+  const activities: Activity[] = await getListActivity();
+  return {
+    props: {
+      activities,
+    },
+  };
+}
 
-  useEffect(() => {
-    getListActivity().then((data) => {
-      setPosts(data);
-    });
-  }, []);
-
+export default function Home({
+  activities,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <div className="bg-base/35 text-base pt-[80px] flex lg:h-[745px] -z-20">
@@ -61,7 +65,7 @@ export default function Home() {
         className={"bg-base lg:w-4/5 rounded-tr-[200px] lg:px-28 mt-14 py-8"}
       >
         <CardContainer title={t("navbar:tri_dharma")} href="/tri-dharma">
-          {posts.map((post, key) => (
+          {activities.map((post, key) => (
             <Card
               key={key}
               width={"1/4"}
@@ -80,7 +84,7 @@ export default function Home() {
           }
         >
           <CardContainer title={"Dokumentasi Kegiatan"} href="#">
-            {posts.map((post, key) => (
+            {activities.map((post, key) => (
               <Card
                 key={key}
                 width={"1/4"}
