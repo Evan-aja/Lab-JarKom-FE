@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
 import getListActivity, { Activity } from "../lib/strapi/activity";
+import Image from "next/image";
 
 export default function Home() {
   const [posts, setPosts] = useState<Activity[]>([]);
@@ -57,21 +58,41 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        className={"bg-base lg:w-4/5 rounded-tr-[200px] lg:px-28 mt-14 py-8"}
-      >
-        <CardContainer title={t("navbar:tri_dharma")} href="/tri-dharma">
-          {posts.map((post, key) => (
-            <Card
-              key={key}
-              width={"1/4"}
-              href={`/tri-dharma/${post.id}`}
-              title={post.title}
-              description={post.description}
-              image={post.image}
-            />
-          ))}
-        </CardContainer>
+      <div className={"bg-base lg:w-4/5 rounded-tr-[500px] lg:px-28 mt-14 py-14"}>
+        <h1 className={'font-poppins font-semibold text-white pb-14 text-3xl drop-shadow-lg'}>{t('tri-dharma:title')}</h1>
+        <div className="flex justify-left lg:pr-2">
+          <Link className={'w-1/4 mr-7'} href={'/tri-dharma'}>
+            <div className="w-full bg-white p-4 rounded-lg shadow-md">
+              <div className="flex w-full aspect-[1/1] mb-4">
+                <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"https://dummyimage.com/200x400"}/>
+              </div>
+              <h3 className={'text-center font-poppins font-semibold'}>
+                {t('tri-dharma:education')}
+              </h3>
+            </div>
+          </Link>
+          <Link className={'w-1/4 mr-7'} href={'/tri-dharma'}>
+            <div className="w-full bg-white p-4 rounded-lg">
+              <div className="flex w-full aspect-[1/1] rounded-lg mb-4">
+                <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"https://dummyimage.com/200x400"} alt={''}/>
+              </div>
+              <h3 className={'text-center font-poppins font-semibold'}>
+                {t('tri-dharma:research')}
+              </h3>
+            </div>
+          </Link>
+          <Link className={'w-1/4 '} href={'/tri-dharma'}>
+            <div className="w-full bg-white p-4 rounded-lg">
+              <div className="flex w-full aspect-[1/1] mb-4">
+                <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"https://dummyimage.com/200x400"}/>
+              </div>
+              <h3 className={'text-center font-poppins font-semibold'}>
+                {t('tri-dharma:dedication')}
+              </h3>
+            </div>
+          </Link>
+        </div>
+
       </div>
       <div className={"w-full flex justify-end"}>
         <div
@@ -81,14 +102,6 @@ export default function Home() {
         >
           <CardContainer title={t("navbar:tri_dharma")} href="/tri-dharma">
             {posts.map((post, key) => (
-              // <Card
-              //   key={key}
-              //   width={"1/4"}
-              //   href={`/tri-dharma/${post.id}`}
-              //   title={post.judul}
-              //   description={post.deskripsi}
-              //   image={post.gambar}
-              // />
               <Card
                 key={key}
                 width={"1/4"}
