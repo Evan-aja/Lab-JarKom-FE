@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 const ComingSoon: React.FC = () => {
     return (
@@ -15,7 +15,9 @@ const ComingSoon: React.FC = () => {
                 </div>
             </Link>
         </div>
-    );
+      </Link>
+    </div>
+  );
 };
 
 export default ComingSoon;

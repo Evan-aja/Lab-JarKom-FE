@@ -1,7 +1,15 @@
 import pluralize from "pluralize";
 
+// Untuk mendapatkan URI dari backend (docker ip)
 export function getStrapiURL(path: string) {
   return `${process.env.STRAPI_BE_URL || "http://127.0.0.1:1337"}/api${path}`;
+}
+
+// Digunakan untuk form dimana butuh public URI dari backend
+export function getStrapiPublicURL(path: string) {
+  return `${
+    process.env.STRAPI_PUBLIC_BE_URL || "http://127.0.0.1:1337"
+  }/api${path}`;
 }
 
 export function handleRedirection(preview: string, custom: string) {

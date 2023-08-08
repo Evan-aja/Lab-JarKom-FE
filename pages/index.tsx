@@ -6,16 +6,20 @@ import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
 import getListActivity, { Activity } from "../lib/strapi/activity";
 import Image from "next/image";
+import { InferGetServerSidePropsType } from "next";
 
-export default function Home() {
-  const [posts, setPosts] = useState<Activity[]>([]);
+export async function getServerSideProps() {
+  const activities: Activity[] = await getListActivity();
+  return {
+    props: {
+      activities,
+    },
+  };
+}
 
-  useEffect(() => {
-    getListActivity().then((data) => {
-      setPosts(data);
-    });
-  }, []);
-
+export default function Home({
+  activities,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <div className={"bg-[url('/static/hero.png')] bg-cover"}>
@@ -97,7 +101,6 @@ export default function Home() {
             </div>
           </Link>
         </div>
-
       </div>
       <div className={"w-full flex justify-end"}>
         <div
@@ -106,6 +109,18 @@ export default function Home() {
           }
         >
 
+          <CardContainer title={"Dokumentasi Kegiatan"} href="#">
+            {activities.map((post, key) => (
+              <Card
+                key={key}
+                width={"1/4"}
+                href={"#"}
+                title={post.title}
+                description={post.description}
+                image={post.image}
+              />
+            ))}
+          </CardContainer>
         </div>
       </div>
 
