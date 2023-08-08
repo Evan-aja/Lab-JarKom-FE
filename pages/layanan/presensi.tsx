@@ -1,10 +1,10 @@
 import { FormEvent, useState } from "react";
 import { Button, Input, InputGroup } from "react-daisyui";
 import { toast } from "react-toastify";
-import Jumbotron from "../../components/jumbotron";
 import Content from "../../components/content";
 import { t } from "../../lib/i18n";
-import { getStrapiURL } from "../../lib/strapi/helper";
+import { getStrapiPublicURL } from "../../lib/strapi/helper";
+import ImageJumbotron from "../../components/image-jumbotron";
 
 export default function Presensi() {
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ export default function Presensi() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(getStrapiURL("/guest-books"), {
+      const res = await fetch(getStrapiPublicURL("/guest-books"), {
         method: "POST",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -58,9 +58,10 @@ export default function Presensi() {
 
   return (
     <>
-      <Jumbotron
+      <ImageJumbotron
         title={t("services:attendance.title")}
         subtitle={t("services:attendance.subtitle")}
+        image={"/static/presensi.png"}
       />
       <Content>
         <div className={"font-poppins"}>
