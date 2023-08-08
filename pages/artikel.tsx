@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
-
 import BackButton from "../components/BackButton";
 import Image from "next/image";
-import dummyData from "./dummyData";
-// import { MDXRemote } from 'next-mdx-remote';
-// import { serialize } from 'next-mdx-remote/serialize';
-// import { MDXProvider } from '@mdx-js/react';
 import Link from "next/link";
-import {Card} from "react-daisyui";
 import ArticleSuggestionList from "../components/ArticleSuggestionList";
 
 export default function Artikel() {

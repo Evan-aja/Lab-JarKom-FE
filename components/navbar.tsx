@@ -17,7 +17,7 @@ export default () => {
               className='h-5 w-5'
               fill='none'
               viewBox='0 0 24 24'
-              stroke='currentColor'
+              stroke='white'
             >
               <path
                 strokeLinecap='round'
@@ -75,10 +75,10 @@ export default () => {
                   <Dropdown.Item href='/layanan/presensi'>
                     {t('services:attendance:title')}
                   </Dropdown.Item>
-                  <Dropdown.Item href='/layanan/peminjaman'>
+                  <Dropdown.Item href='/layanan/coming-soon'>
                     {t('services:borrow:item:title')}
                   </Dropdown.Item>
-                  <Dropdown.Item href='/layanan/pengembalian'>
+                  <Dropdown.Item href='/layanan/coming-soon'>
                     {t('services:return:item:title')}
                   </Dropdown.Item>
                   <Dropdown.Item href='/layanan/pklskripsi'>
@@ -161,7 +161,7 @@ export default () => {
               </li>
               <li className="bg-base text-white w-120 hover:text-base hover:bg-white">
                 <Link
-                    href="/layanan/peminjaman"
+                    href="/coming-soon"
                     className="w-max hover:bg-transparent"
                 >
                   {t('services:borrow:item:title')}
@@ -169,7 +169,7 @@ export default () => {
               </li>
               <li className="bg-base text-white w-120 hover:text-base hover:bg-white">
                 <Link
-                    href="/layanan/pengembalian"
+                    href="/coming-soon"
                     className="w-max hover:bg-transparent"
                 >
                   {t('services:return:item:title')}

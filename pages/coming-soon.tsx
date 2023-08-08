@@ -6,7 +6,7 @@ const ComingSoon: React.FC = () => {
         <div className="flex flex-col items-center justify-center min-h-screen py-2 pt-[100px]">
             <h1 className="text-4xl font-bold mb-2">Coming Soon</h1>
             <p className="text-center mb-4">
-                We are working hard to finish the development of this site. Our target launch date is
+                We are still working to finish the development of this site. Our target launch date is
                 <strong> August 2023</strong>!
             </p>
             <Link href="/">

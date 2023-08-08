@@ -72,7 +72,7 @@ export default function Profil({
         </div>
         <div className={"my-28 "}>
           <div className={"flex justify-center"}>
-            <h2 className={"text-[40px] text-base font-poppins font-semibold"}>
+            <h2 className={"text-4xl text-base font-poppins font-semibold"}>
               {t("profile:article-profile")}
             </h2>
           </div>
