@@ -180,7 +180,7 @@ export default function Home({
               }
             >
               <img
-                src={"https://dummyimage.com/200x200"}
+                src={getImageURL(activities[1].image)}
                 className={"rounded-lg w-full aspect-[3/2] object-cover"}
                 alt={getImageURL(activities[1].image)}
               />
