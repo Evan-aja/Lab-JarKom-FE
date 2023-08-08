@@ -3,20 +3,27 @@ import mapCategory from "../lib/mapcategory";
 
 interface Props {
   image: string;
-  category: number;
+  category?: number;
+  title?: string;
+  subtitle?: string;
 }
 
-export default function ImageJumbotraon({ image, category }: Props) {
+export default function ImageJumbotron({
+  image,
+  category,
+  title,
+  subtitle,
+}: Props) {
   return (
     <>
-      <div className="text-white pt-[80px] bg-primary">
-        <div>
+      <div className="text-white pt-[80px] bg-[url('/static/header-presensi.png')] bg-cover bg-center">
+        <div className="backdrop-blur-sm backdrop-filter">
           <div className="py-20 lg:py-28 text-center">
             <h1 className="text-5xl lg:text-8xl font-bold mb-4 lg:mb-8">
-              {mapCategory(category)}
+              {category ? mapCategory(category) : title}
             </h1>
             <h2 className="text-2xl lg:text-6xl font-bold mb-4 lg:mb-8">
-              {t("tri-dharma:subtitle")}
+              {subtitle ? subtitle : t("tri-dharma:subtitle")}
             </h2>
           </div>
           <div
@@ -24,14 +31,6 @@ export default function ImageJumbotraon({ image, category }: Props) {
             id="gradient"
           />
         </div>
-      </div>
-      <div className=" -mt-40">
-        <img
-          src={image}
-          alt="Post Image"
-          width="80%"
-          className="aspect-video object-cover mx-auto shadow-xl rounded-3xl"
-        />
       </div>
     </>
   );
