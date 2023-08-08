@@ -2,7 +2,7 @@ import pluralize from "pluralize";
 
 // Untuk mendapatkan URI dari backend (docker ip)
 export function getStrapiURL(path: string) {
-  return `https://icn-filkom.ub.ac.id/api/api${path}`;
+  return `http://localhost:1337/api${path}`;
 }
 
 // Digunakan untuk form dimana butuh public URI dari backend

@@ -9,7 +9,7 @@ import { InferGetServerSidePropsType } from "next";
 
 export const getServerSideProps = async () => {
   const articles = await getListArticle();
-  // console.log(articles);
+  console.log(articles);
 
   return {
     props: {

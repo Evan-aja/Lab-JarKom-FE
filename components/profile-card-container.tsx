@@ -17,7 +17,8 @@ const CardContainer: React.FC<CardContainerProps> = ({ articles }) => {
               title={article.title}
               image={article.image}
               content={article.content}
-              link={`/article/${article.id}`}
+              // link={`/article/${article.id}`}
+              link=""
             />
           ))
         ) : (
