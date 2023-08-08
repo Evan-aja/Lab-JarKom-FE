@@ -10,7 +10,7 @@ export function getStrapiPublicURL(path: string) {
   return `https://icn-filkom.ub.ac.id/api/api${path}`;
 }
 
-export function getStrapiImageURL(path: string) {
+export function getImageURL(path: string) {
   return `/api${path}`;
 }
 

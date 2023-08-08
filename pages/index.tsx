@@ -7,7 +7,7 @@ import { t } from "../lib/i18n";
 import getListActivity, { Activity } from "../lib/strapi/activity";
 import Image from "next/image";
 import { InferGetServerSidePropsType } from "next";
-import { getStrapiImageURL } from "../lib/strapi/helper";
+import { getImageURL } from "../lib/strapi/helper";
 
 export async function getServerSideProps() {
   const activities: Activity[] = await getListActivity();
@@ -139,7 +139,7 @@ export default function Home({
                 href={"#"}
                 title={post.title}
                 description={post.description}
-                image={getStrapiImageURL(post.image)}
+                image={getImageURL(post.image)}
               />
             ))}
           </CardContainer>
