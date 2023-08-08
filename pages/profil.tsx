@@ -1,4 +1,3 @@
-import Jumbotron from "../components/jumbotron";
 import React, { useEffect } from "react";
 import CardView from "../components/profile-card";
 import CardViewContainer from "../components/profile-card-container";
