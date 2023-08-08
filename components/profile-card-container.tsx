@@ -1,7 +1,11 @@
 import Card from "./profile-card";
-import articles from "../pages/dummyData";
+// import articles from "../pages/dummyData";
 
-const CardContainer: React.FC = () => {
+interface CardContainerProps {
+    articles: any[]
+}
+
+const CardContainer: React.FC<CardContainerProps> = ({articles}: CardContainerProps) => {
     return (
         <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-7">

@@ -5,7 +5,7 @@ import CardViewContainer from "../components/profile-card-container";
 
 import { t } from "../lib/i18n";
 import CardContainer from "../components/profile-card-container";
-import { getListArticles } from "../lib/strapi/articles";
+import getListArticles from "../lib/strapi/article";
 
 export default function Profil() {
   const [articles, setArticles] = React.useState([]);
