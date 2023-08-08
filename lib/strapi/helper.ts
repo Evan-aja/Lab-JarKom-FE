@@ -1,9 +1,7 @@
 import pluralize from "pluralize";
 
 export function getStrapiURL(path: string) {
-  return `${
-    process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:1337"
-  }/api${path}`;
+  return `${process.env.STRAPI_BE_URL || "http://127.0.0.1:1337"}/api${path}`;
 }
 
 export function handleRedirection(preview: string, custom: string) {

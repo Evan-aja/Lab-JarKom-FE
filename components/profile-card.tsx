@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 
 type CardProps = {
-    id: number;
-    title: string;
-    image: string;
-    content: string;
-    link: string;
+  id: number;
+  title: string;
+  image: string;
+  content: string;
+  link: string;
 };
 
 const Card: React.FC<CardProps> = ({ id, title, image, content, link }) => {
