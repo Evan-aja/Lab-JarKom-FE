@@ -58,11 +58,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={"bg-base lg:w-4/5 rounded-tr-[500px] lg:px-28 mt-14 py-14"}>
-        <h1 className={'font-poppins font-semibold text-white pb-14 text-3xl drop-shadow-lg'}>{t('tri-dharma:title')}</h1>
-        <div className="flex justify-left lg:pr-2">
-          <Link className={'w-1/4 mr-7'} href={'/tri-dharma'}>
-            <div className="w-full bg-white p-4 rounded-lg shadow-md">
+      <div className={"bg-base px-7 lg:w-4/5 md:rounded-tr-[500px] lg:px-28 mt-14 py-14"}>
+        <h1 className={'font-poppins font-semibold text-white pb-14 text-2xl md:text-3xl drop-shadow-lg'}>{t('tri-dharma:title')}</h1>
+        <div className="lg:flex -mx-1 lg:-mx-4">
+          <Link className={'w-1/4 lg:mr-7'} href={'/coming-soon'}>
+            <div className="w-full bg-white p-4 max-w-[250px] md:max-w-[500px] rounded-lg shadow-md">
               <div className="flex w-full aspect-[1/1] mb-4">
                 <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"https://dummyimage.com/200x400"}/>
               </div>
@@ -71,8 +71,8 @@ export default function Home() {
               </h3>
             </div>
           </Link>
-          <Link className={'w-1/4 mr-7'} href={'/tri-dharma'}>
-            <div className="w-full bg-white p-4 rounded-lg">
+          <Link className={'w-1/4 lg:mr-7'} href={'/coming-soon'}>
+            <div className="w-full bg-white my-4 lg:my-0 md:max-w-[500px] p-4 max-w-[250px] rounded-lg">
               <div className="flex w-full aspect-[1/1] rounded-lg mb-4">
                 <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"https://dummyimage.com/200x400"} alt={''}/>
               </div>
@@ -81,8 +81,8 @@ export default function Home() {
               </h3>
             </div>
           </Link>
-          <Link className={'w-1/4 '} href={'/tri-dharma'}>
-            <div className="w-full bg-white p-4 rounded-lg">
+          <Link className={'w-1/4 '} href={'/coming-soon'}>
+            <div className="w-full bg-white p-4 max-w-[250px]  md:max-w-[500px] rounded-lg">
               <div className="flex w-full aspect-[1/1] mb-4">
                 <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"https://dummyimage.com/200x400"}/>
               </div>
@@ -100,18 +100,7 @@ export default function Home() {
             "bg-ylw/65 lg:w-4/5 right-0 rounded-tl-[200px] lg:px-28 mt-14 py-8"
           }
         >
-          <CardContainer title={t("navbar:tri_dharma")} href="/tri-dharma">
-            {posts.map((post, key) => (
-              <Card
-                key={key}
-                width={"1/4"}
-                href={`/tri-dharma/${post.id}`}
-                title={post.title}
-                description={post.description}
-                image={post.image}
-              />
-            ))}
-          </CardContainer>
+
         </div>
       </div>
 
@@ -142,13 +131,13 @@ export default function Home() {
           <div className="flex justify-center">
             <a
               className="lg:mr-12 mt-14 md:flex btn btn-ghost md:h-24 md:text-lg"
-              href={"/"}
+              href={"/layanan/pklskripsi"}
             >
               <div className="flex h-10 w-10 md:h-20 md:w-20 mr-3 items-center justify-center object-cover">
                 <img className="" src="/static/pklskripsi.png" />
               </div>
               <span className={"normal-case"}>
-                {t("services:registerpklskripsi:item:title")}
+                {t("services:registerpklskripsi:short")}
               </span>
             </a>
           </div>
@@ -156,7 +145,7 @@ export default function Home() {
           <div className="flex justify-center">
             <a
               className=" mt-14 md:flex btn btn-ghost md:h-24 md:text-lg"
-              href={"/"}
+              href={"/layanan/peminjaman"}
             >
               <div className="flex h-10 w-10 md:h-20 md:w-20 mr-3 items-center justify-center object-cover">
                 <img className="" src="/static/peminjaman.png" />
