@@ -6,6 +6,18 @@ import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
 import getListActivity, { Activity } from "../lib/strapi/activity";
 import Image from "next/image";
+import Slider from "../components/ImageSlider";
+import Swal from "sweetalert2";
+import getImage = module
+
+const images = [
+  'https://dummyimage.com/300x300',
+  'https://dummyimage.com/200x300',
+  'https://dummyimage.com/400x300',
+  'https://dummyimage.com/300x300',
+  'https://dummyimage.com/200x300',
+  'https://dummyimage.com/400x300',
+]
 
 export default function Home() {
   const [posts, setPosts] = useState<Activity[]>([]);
@@ -102,9 +114,25 @@ export default function Home() {
       <div className={"w-full flex justify-end"}>
         <div
           className={
-            "bg-ylw/65 lg:w-4/5 right-0 rounded-tl-[200px] lg:px-28 mt-14 py-8"
+            "bg-ylw/65 w-full lg:w-4/5 right-0 lg:rounded-tl-[500px] px-14 lg:px-28 mt-14 py-8"
           }
         >
+          <h1 className={'font-poppins font-semibold text-black pb-14 text-2xl md:text-3xl drop-shadow-lg'}>{t('homepage:documentation')}</h1>
+          <div className="lg:flex flex-wrap">
+            <div className={'rounded-lg w-full p-3 lg:w-1/3 aspect-[3/2] object-cover'}>
+              <img src={'https://dummyimage.com/200x200'} className={'rounded-lg w-full aspect-[3/2] object-cover'} alt={''}/>
+              <p className={'bg-white px-3 py-2 text-sm line-clamp-2'}>captions</p>
+            </div>
+            <div className={'rounded-lg w-full p-3 lg:w-1/3 aspect-[3/2] object-cover'}>
+              <img src={'https://dummyimage.com/200x200'} className={'rounded-lg w-full aspect-[3/2] object-cover'} alt={''}/>
+              <p className={'bg-white px-3 py-2 text-sm line-clamp-2'}>captions</p>
+            </div>
+            <div className={'rounded-lg w-full p-3 lg:w-1/3 aspect-[3/2] object-cover'}>
+              <img src={'https://dummyimage.com/200x200'} className={'rounded-lg w-full aspect-[3/2] object-cover'} alt={''}/>
+              <p className={'bg-white px-3 py-2 text-sm line-clamp-2'}>captions</p>
+            </div>
+          </div>
+
 
         </div>
       </div>
