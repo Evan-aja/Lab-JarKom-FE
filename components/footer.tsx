@@ -161,7 +161,7 @@ export default function CustomFooter() {
       <div className="bg-base/35 text-center p-8">
         <p className="text-darkGrey">
           ©{new Date().getFullYear()}. All Rights Reserved. by{" "}
-          {t("app_name_short")} 2022
+          {t("app_name_short")}
         </p>
       </div>
     </footer>
