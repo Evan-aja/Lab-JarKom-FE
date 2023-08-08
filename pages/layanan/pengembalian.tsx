@@ -6,6 +6,8 @@ import withReactContent from 'sweetalert2-react-content'
 import Jumbotron from '../../components/jumbotron'
 import Content from '../../components/content'
 import { t } from '../../lib/i18n'
+import Link from "next/link";
+import Image from "next/image";
 
 export default () => {
   const [code, setCode] = useState('')
@@ -27,6 +29,21 @@ export default () => {
       <Jumbotron
         title={t('services:return.title')}
         subtitle={t('services:return.subtitle')} />
+      <div className="flex">
+        <Link href={"/layanan/inventaris"} className={'btn btn-ghost lg:btn-xl'}>
+          <div className="flex">
+            <div className="flex aspect-square h-max-[119px]">
+              <img
+                  src={'/static/sop.png'}
+                  alt={''}
+                  className={'w-max-[119px] object-cover h-max-[119px]'}
+              />
+            </div>
+          </div>
+
+        </Link>
+      </div>
+
       <Content>
         <div className='mb-20'>
           <h3 className='text-baseDark font-bold text-3xl mb-8'>{t('services:return.heading')}</h3>
