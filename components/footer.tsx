@@ -102,11 +102,15 @@ export default function CustomFooter() {
         </div>
       </div>
       <Footer className="py-10 px-10 xl:px-44 bg-base/35 text-lg">
-        <div className="">
-          <Footer.Title className="text-base/100">Logo</Footer.Title>
+        <div className="w-4/5">
+          <Footer.Title className="text-base/100">
+            {t("common:app_name")}
+          </Footer.Title>
           <p className="text-darkGrey">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.{" "}
+            Laboratorium Jaringan Berbasis Informasi merupakan salah satu
+            laboratorium komputer yang memfokuskan diri pada bidang pengembangan
+            jaringan berbasis informasi di Fakultas Ilmu Komputer Universitas
+            Brawijaya (FILKOM UB).{" "}
           </p>
         </div>
         <div className="xl:px-20">
