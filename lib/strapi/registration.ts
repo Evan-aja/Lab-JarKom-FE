@@ -17,7 +17,7 @@ export default async function submitRegistration(
 ) {
   const formData = new FormData();
   formData.append("data", JSON.stringify(data));
-  formData.append("files.cv", file);
+  formData.append("portofolio", file);
 
   return fetch(getStrapiURL("/registrations"), {
     method: "POST",

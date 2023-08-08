@@ -5,17 +5,23 @@ import CardViewContainer from "../components/profile-card-container";
 
 import { t } from "../lib/i18n";
 import CardContainer from "../components/profile-card-container";
-import getListArticles from "../lib/strapi/article";
+import getListArticle, { Article } from "../lib/strapi/article";
+import { InferGetServerSidePropsType } from "next";
 
-export default function Profil() {
-  const [articles, setArticles] = React.useState([]);
+export const getServerSideProps = async () => {
+  const articles = await getListArticle();
+  // console.log(articles);
 
-  useEffect(() => {
-    getListArticles().then((res) => {
-      setArticles(res);
-    });
-  }, []);
+  return {
+    props: {
+      articles,
+    },
+  };
+};
 
+export default function Profil({
+  articles,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <div className={"px-8 lg:px-14 pt-[80px]"}>
