@@ -1,4 +1,4 @@
-import { getStrapiURL } from "./helper";
+import { getStrapiPublicURL } from "./helper";
 import qs from "qs";
 import delve from "dlv";
 
@@ -19,7 +19,7 @@ export default async function submitRegistration(
   formData.append("data", JSON.stringify(data));
   formData.append("portofolio", file);
 
-  return fetch(getStrapiURL("/registrations"), {
+  return fetch(getStrapiPublicURL("/registrations"), {
     method: "POST",
     body: formData,
   });
