@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import { Input, Button, Textarea, Footer } from "react-daisyui";
 import { toast } from "react-toastify";
 import { t } from "../lib/i18n";
-import { getStrapiURL } from "../lib/strapi/helper";
+import { getStrapiPublicURL } from "../lib/strapi/helper";
 
 export default function CustomFooter() {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function CustomFooter() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(getStrapiURL("/contact-forms"), {
+      const res = await fetch(getStrapiPublicURL("/contact-forms"), {
         method: "POST",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
