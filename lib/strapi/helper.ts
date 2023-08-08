@@ -11,7 +11,7 @@ export function getStrapiPublicURL(path: string) {
 }
 
 export function getStrapiImageURL(path: string) {
-  return `https://icn-filkom.ub.ac.id/api${path}`;
+  return `/api${path}`;
 }
 
 export function handleRedirection(preview: string, custom: string) {

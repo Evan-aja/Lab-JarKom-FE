@@ -7,6 +7,7 @@ import { t } from "../lib/i18n";
 import getListActivity, { Activity } from "../lib/strapi/activity";
 import Image from "next/image";
 import { InferGetServerSidePropsType } from "next";
+import { getStrapiImageURL } from "../lib/strapi/helper";
 
 export async function getServerSideProps() {
   const activities: Activity[] = await getListActivity();
@@ -38,12 +39,14 @@ export default function Home({
               {t("homepage:description")}
             </p>
             <div className="md:flex w-full">
-              <Link className="btn btn-primary mr-4" href={'/kontak'}>{t('homepage:contactus')}</Link>
-              <Link className="btn btn-ghost bg-white" href={'/profil'}>{t('homepage:seemore')}</Link>
+              <Link className="btn btn-primary mr-4" href={"/kontak"}>
+                {t("homepage:contactus")}
+              </Link>
+              <Link className="btn btn-ghost bg-white" href={"/profil"}>
+                {t("homepage:seemore")}
+              </Link>
             </div>
-
           </div>
-
         </div>
       </div>
 
@@ -67,36 +70,56 @@ export default function Home({
         </div>
       </div>
 
-      <div className={"bg-base px-7 lg:w-4/5 md:rounded-tr-[500px] lg:px-28 mt-14 py-14"}>
-        <h1 className={'font-poppins font-semibold text-white pb-14 text-2xl md:text-3xl drop-shadow-lg'}>{t('tri-dharma:title')}</h1>
+      <div
+        className={
+          "bg-base px-7 lg:w-4/5 md:rounded-tr-[500px] lg:px-28 mt-14 py-14"
+        }
+      >
+        <h1
+          className={
+            "font-poppins font-semibold text-white pb-14 text-2xl md:text-3xl drop-shadow-lg"
+          }
+        >
+          {t("tri-dharma:title")}
+        </h1>
         <div className="lg:flex -mx-1 lg:-mx-4">
-          <Link className={'w-1/4 lg:mr-7'} href={'/coming-soon'}>
+          <Link className={"w-1/4 lg:mr-7"} href={"/coming-soon"}>
             <div className="w-full bg-white p-4 max-w-[250px] md:max-w-[500px] rounded-lg shadow-md">
               <div className="flex w-full aspect-[1/1] mb-4">
-                <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"/static/pembelajaran.jpg"}/>
+                <img
+                  className={"aspect-[1/1] w-full object-cover rounded-lg"}
+                  src={"/static/pembelajaran.jpg"}
+                />
               </div>
-              <h3 className={'text-center font-poppins font-semibold'}>
-                {t('tri-dharma:education')}
+              <h3 className={"text-center font-poppins font-semibold"}>
+                {t("tri-dharma:education")}
               </h3>
             </div>
           </Link>
-          <Link className={'w-1/4 lg:mr-7'} href={'/coming-soon'}>
+          <Link className={"w-1/4 lg:mr-7"} href={"/coming-soon"}>
             <div className="w-full bg-white my-4 lg:my-0 md:max-w-[500px] p-4 max-w-[250px] rounded-lg">
               <div className="flex w-full aspect-[1/1] rounded-lg mb-4">
-                <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"/static/penelitian.jpg"} alt={''}/>
+                <img
+                  className={"aspect-[1/1] w-full object-cover rounded-lg"}
+                  src={"/static/penelitian.jpg"}
+                  alt={""}
+                />
               </div>
-              <h3 className={'text-center font-poppins font-semibold'}>
-                {t('tri-dharma:research')}
+              <h3 className={"text-center font-poppins font-semibold"}>
+                {t("tri-dharma:research")}
               </h3>
             </div>
           </Link>
-          <Link className={'w-1/4 '} href={'/coming-soon'}>
+          <Link className={"w-1/4 "} href={"/coming-soon"}>
             <div className="w-full bg-white p-4 max-w-[250px]  md:max-w-[500px] rounded-lg">
               <div className="flex w-full aspect-[1/1] mb-4">
-                <img className={'aspect-[1/1] w-full object-cover rounded-lg'} src={"/static/pengabdian.jpg"}/>
+                <img
+                  className={"aspect-[1/1] w-full object-cover rounded-lg"}
+                  src={"/static/pengabdian.jpg"}
+                />
               </div>
-              <h3 className={'text-center font-poppins font-semibold'}>
-                {t('tri-dharma:dedication')}
+              <h3 className={"text-center font-poppins font-semibold"}>
+                {t("tri-dharma:dedication")}
               </h3>
             </div>
           </Link>
@@ -108,7 +131,6 @@ export default function Home({
             "bg-ylw/65 lg:w-4/5 right-0 rounded-tl-[200px] lg:px-28 mt-14 py-8"
           }
         >
-
           <CardContainer title={"Dokumentasi Kegiatan"} href="#">
             {activities.map((post, key) => (
               <Card
@@ -117,7 +139,7 @@ export default function Home({
                 href={"#"}
                 title={post.title}
                 description={post.description}
-                image={post.image}
+                image={getStrapiImageURL(post.image)}
               />
             ))}
           </CardContainer>
