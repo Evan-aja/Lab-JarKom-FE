@@ -12,9 +12,9 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ id, title, image, content, link }) => {
     return (
         <div className="w-full rounded-[30px] overflow-hidden shadow-lg sm:text-sm md:text-base lg:text-lg xl:text-xl font-poppins">
-            <div className="">
+            <div className="object-cover aspect-[3/2]">
                 <img
-                    className="object-cover w-full max-h-72"
+                    className="object-cover w-full aspect-[3/2]"
                     src={image}
                     alt={title}
                 />
