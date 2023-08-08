@@ -2,10 +2,10 @@ import { t } from "../lib/i18n";
 import mapCategory from "../lib/mapcategory";
 
 interface Props {
-  image: string;
-  category?: number;
-  title?: string;
-  subtitle?: string;
+  image?: string | null;
+  category?: number | null;
+  title?: string | null;
+  subtitle?: string | null;
 }
 
 export default function ImageJumbotron({
@@ -14,6 +14,7 @@ export default function ImageJumbotron({
   title,
   subtitle,
 }: Props) {
+  // TODO: make image dynamic
   return (
     <>
       <div className="text-white pt-[80px] bg-[url('/static/header-presensi.png')] bg-cover bg-center">

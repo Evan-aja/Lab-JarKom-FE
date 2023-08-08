@@ -22,15 +22,15 @@ function Custom404() {
       <ImageJumbotron
         title="404"
         subtitle={t("error:404_desc")}
-        buttonText={t("error:404_button")}
-        buttonHref="/"
+        // buttonText={t("error:404_button")}
+        // buttonHref="/"
       />
 
       <Content>
         <CardContainer
           title={t("error:404_heading")}
           href="/tri-dharma"
-          button={t("button_more")}
+          // button={t("button_more")}
         >
           {posts.map((post, key) => (
             <Card

@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { Card } from "react-daisyui";
 import Content from "../../components/content";
-import Jumbotron from "../../components/jumbotron";
 import { t } from "../../lib/i18n";
+import ImageJumbotron from "../../components/image-jumbotron";
 
 export default function Layanan() {
   return (
     <>
-      <Jumbotron
+      <ImageJumbotron
         title={t("services:page.title")}
         subtitle={t("services:page.subtitle")}
-        buttonText={t("services:page.button")}
+        // buttonText={t("services:page.button")}
       />
 
       <Content>
