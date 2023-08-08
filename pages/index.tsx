@@ -125,7 +125,7 @@ export default function Home({
           </Link>
         </div>
       </div>
-      <div className={"w-full flex justify-end"}>
+      {/* <div className={"w-full flex justify-end"}>
         <div
           className={
             "bg-ylw/65 lg:w-4/5 right-0 rounded-tl-[200px] lg:px-28 mt-14 py-8"
@@ -143,6 +143,66 @@ export default function Home({
               />
             ))}
           </CardContainer>
+        </div>
+      </div> */}
+
+      <div className={"w-full flex justify-end"}>
+        <div
+          className={
+            "bg-ylw/65 w-full lg:w-4/5 right-0 lg:rounded-tl-[500px] px-14 lg:px-28 mt-14 py-8"
+          }
+        >
+          <h1
+            className={
+              "font-poppins font-semibold text-black pb-14 text-2xl md:text-3xl drop-shadow-lg"
+            }
+          >
+            {t("homepage:documentation")}
+          </h1>
+          <div className="lg:flex flex-wrap">
+            <div
+              className={
+                "rounded-lg w-full p-3 lg:w-1/3 aspect-[3/2] object-cover"
+              }
+            >
+              <img
+                src={getImageURL(activities[0].image)}
+                className={"rounded-lg w-full aspect-[3/2] object-cover"}
+                alt={""}
+              />
+              <p className={"bg-white px-3 py-2 text-sm line-clamp-2"}>
+                {activities[0].description}
+              </p>
+            </div>
+            <div
+              className={
+                "rounded-lg w-full p-3 lg:w-1/3 aspect-[3/2] object-cover"
+              }
+            >
+              <img
+                src={"https://dummyimage.com/200x200"}
+                className={"rounded-lg w-full aspect-[3/2] object-cover"}
+                alt={getImageURL(activities[1].image)}
+              />
+              <p className={"bg-white px-3 py-2 text-sm line-clamp-2"}>
+                {activities[1].description}
+              </p>
+            </div>
+            <div
+              className={
+                "rounded-lg w-full p-3 lg:w-1/3 aspect-[3/2] object-cover"
+              }
+            >
+              <img
+                src={getImageURL(activities[2].image)}
+                className={"rounded-lg w-full aspect-[3/2] object-cover"}
+                alt={""}
+              />
+              <p className={"bg-white px-3 py-2 text-sm line-clamp-2"}>
+                {activities[2].description}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
