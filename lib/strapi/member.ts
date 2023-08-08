@@ -3,6 +3,7 @@ import qs from "qs";
 import delve from "dlv";
 
 export interface Member {
+  id: number;
   name: string;
   category: string;
   position: string;

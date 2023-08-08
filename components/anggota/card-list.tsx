@@ -5,23 +5,13 @@ import Card from "./card";
 import DropdownFilter from "./dropdown-filter";
 import SearchBar from "./search-bar";
 import Pagination from "./pagination";
-
-interface Member {
-  id: number;
-  name: string;
-  position: string;
-  department: string;
-  studyProgram: string;
-  email: string;
-  isStudent: boolean;
-  image: string;
-}
+import { Member } from "../../lib/strapi/member";
 
 interface CardListProps {
   members: Member[];
 }
 
-const CardList: React.FC<CardListProps> = ({ members }) => {
+const CardMemberList: React.FC<CardListProps> = ({ members }) => {
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [searchInput, setSearchInput] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -91,4 +81,4 @@ const CardList: React.FC<CardListProps> = ({ members }) => {
   );
 };
 
-export default CardList;
+export default CardMemberList;

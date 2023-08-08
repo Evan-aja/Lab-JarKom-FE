@@ -1,16 +1,8 @@
 import React from "react";
+import { Member } from "../../lib/strapi/member";
 
 interface CardProps {
-  member: {
-    id: number;
-    name: string;
-    position: string;
-    department: string;
-    studyProgram: string;
-    email: string;
-    isStudent: boolean;
-    image: string;
-  };
+  member: Member;
 }
 
 const Card: React.FC<CardProps> = ({ member }) => {
@@ -36,7 +28,7 @@ const Card: React.FC<CardProps> = ({ member }) => {
         <p className="text-sm lg:text-xl break-words mb-2">
           {member.department}
         </p>
-        <p className="text-sm lg:text-xl break-words">{member.studyProgram}</p>
+        <p className="text-sm lg:text-xl break-words">{member.department}</p>
         <p className="mt-4 text-xs md:text-sm lg:text-md break-words">
           {member.email}
         </p>

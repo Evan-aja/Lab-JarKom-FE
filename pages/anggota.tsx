@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
-import CardList from "../components/anggota/card-list";
+import CardMemberList from "../components/anggota/card-list";
 import getMembers from "../lib/strapi/member";
+import { InferGetServerSidePropsType } from "next";
 
-export default function Anggota() {
-  const [members, setMembers] = useState([]);
+export const getServerSideProps = async () => {
+  const members = await getMembers();
+  console.log(members);
 
-  useEffect(() => {
-    getMembers().then((res) => {
-      console.log(res);
-      setMembers(res);
-    });
-  }, []);
+  return {
+    props: {
+      members,
+    },
+  };
+};
 
+export default function Anggota({
+  members,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <div className={"px-8 lg:px-28 pt-[80px]"}>
@@ -29,7 +34,7 @@ export default function Anggota() {
         </div>
         <div className={"xl:px-28 mb-14"}>
           <h1>Member Directory</h1>
-          <CardList members={members} />
+          <CardMemberList members={members} />
         </div>
       </div>
     </>
