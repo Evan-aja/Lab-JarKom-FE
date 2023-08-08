@@ -1,17 +1,18 @@
 import React from "react";
 import { Member } from "../../lib/strapi/member";
+import { getImageURL } from "../../lib/strapi/helper";
 
 interface CardProps {
   member: Member;
 }
 
-const Card: React.FC<CardProps> = ({ member }) => {
+const MemberCard: React.FC<CardProps> = ({ member }) => {
   return (
     <div className="md:flex  px-8 xl:px-28 py-8 w-full my-8 border border-gray-500">
       <div className="flex md:w-1/6 items-center justify-center">
         <div className="aspect-[1/1] w-24 mb-4 md:mb-0 md:w-32 lg:w-48">
           <img
-            src={member.image}
+            src={getImageURL(member.image)}
             alt={member.name}
             className={"object-cover rounded-full w-full h-full"}
           />
@@ -37,4 +38,4 @@ const Card: React.FC<CardProps> = ({ member }) => {
   );
 };
 
-export default Card;
+export default MemberCard;

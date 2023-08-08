@@ -1,7 +1,7 @@
 // CardList.tsx
 
 import React, { useState } from "react";
-import Card from "./card";
+import MemberCard from "./card";
 import DropdownFilter from "./dropdown-filter";
 import SearchBar from "./search-bar";
 import Pagination from "./pagination";
@@ -69,7 +69,7 @@ const CardMemberList: React.FC<CardListProps> = ({ members }) => {
         </div>
       </div>
       {currentMembers.map((member) => (
-        <Card key={member.id} member={member} />
+        <MemberCard key={member.id} member={member} />
       ))}
       <Pagination
         totalCards={searchedMembers.length}
