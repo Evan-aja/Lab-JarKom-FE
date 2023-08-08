@@ -3,7 +3,8 @@ import Link from "next/link";
 
 const ComingSoon: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 pt-[100px] bg-[url('/static/under-construction.jpg')] bg-cover bg-center backdrop-blur-sm backdrop-filter">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 pt-[100px] bg-[url('/static/under-construction.jpg')] bg-cover bg-center">
+      <div className="backdrop-blur-sm backdrop-filter"></div>
       <h1 className="text-4xl font-bold mb-2">Coming Soon</h1>
       <p className="text-center mb-4">
         We are still working to finish the development of this site. Our target
