@@ -14,11 +14,11 @@ export default function CustomNavbar() {
         <Dropdown>
           <Button color="info" tabIndex={0} className="lg:hidden">
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='white'
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="white"
             >
               <path
                 strokeLinecap="round"
@@ -135,20 +135,20 @@ export default function CustomNavbar() {
               )}
             </Dropdown.Item>
             {isOpen && (
-                <>
-                  <Dropdown.Item href='/layanan/presensi'>
-                    {t('services:attendance:title')}
-                  </Dropdown.Item>
-                  <Dropdown.Item href='/layanan/coming-soon'>
-                    {t('services:borrow:item:title')}
-                  </Dropdown.Item>
-                  <Dropdown.Item href='/layanan/coming-soon'>
-                    {t('services:return:item:title')}
-                  </Dropdown.Item>
-                  <Dropdown.Item href='/layanan/pklskripsi'>
-                    {t('services:registerpklskripsi:item:title')}
-                  </Dropdown.Item>
-                </>
+              <>
+                <Dropdown.Item href="/layanan/presensi">
+                  {t("services:attendance:title")}
+                </Dropdown.Item>
+                <Dropdown.Item href="/tri-dharma">
+                  {t("services:borrow:item:title")}
+                </Dropdown.Item>
+                <Dropdown.Item href="/tri-dharma">
+                  {t("services:return:item:title")}
+                </Dropdown.Item>
+                <Dropdown.Item href="/layanan/pklskripsi">
+                  {t("services:registerpklskripsi:item:title")}
+                </Dropdown.Item>
+              </>
             )}
             <Dropdown.Item
               href="/kontak"
@@ -219,6 +219,7 @@ export default function CustomNavbar() {
           <Menu.Item>
             <Link
               href="/tri-dharma"
+              // href="/coming-soon"
               className={
                 router.pathname == "/tri-dharma"
                   ? "font-semibold text-base bg-transparent"
@@ -255,18 +256,12 @@ export default function CustomNavbar() {
                 </Link>
               </li>
               <li className="bg-base text-white w-120 hover:text-base hover:bg-white">
-                <Link
-                    href="/coming-soon"
-                    className="w-max hover:bg-transparent"
-                >
+                <Link href="/tri-dharma" className="w-max hover:bg-transparent">
                   {t("services:borrow:item:title")}
                 </Link>
               </li>
               <li className="bg-base text-white w-120 hover:text-base hover:bg-white">
-                <Link
-                    href="/coming-soon"
-                    className="w-max hover:bg-transparent"
-                >
+                <Link href="/tri-dharma" className="w-max hover:bg-transparent">
                   {t("services:return:item:title")}
                 </Link>
               </li>

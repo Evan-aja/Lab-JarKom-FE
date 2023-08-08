@@ -1,13 +1,13 @@
 import { FormEvent, useState } from "react";
 import { Button, Input, InputGroup } from "react-daisyui";
 import { toast } from "react-toastify";
-import Jumbotron from "../../components/jumbotron";
 import FileUpload from "../../components/file-input";
 import Content from "../../components/content";
 import { t } from "../../lib/i18n";
 import submitRegistration, {
   RegistrationJSONData,
 } from "../../lib/strapi/registration";
+import ImageJumbotron from "../../components/image-jumbotron";
 
 export default function PendaftaranPKLSkripsi() {
   const [email, setEmail] = useState("");
@@ -66,7 +66,7 @@ export default function PendaftaranPKLSkripsi() {
 
   return (
     <>
-      <Jumbotron
+      <ImageJumbotron
         title={t("services:registerpklskripsi.title")}
         subtitle={t("services:registerpklskripsi.subtitle")}
       />
