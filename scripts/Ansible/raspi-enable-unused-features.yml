@@ -1,0 +1,67 @@
+---
+- name: Enable Features Playbook
+  hosts: docker_hosts
+  become: true
+  tasks:
+    - name: Restart Nodes
+      reboot:
+      become: yes
+
+    - name: Wait for the Nodes to come back online
+      wait_for_connection:
+        delay: 10
+
+    - name: Enable USB
+      command: echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/bind
+      register: usb_enabled
+      changed_when: usb_enabled.stdout == ''
+
+    - name: Uncomment vc4-kms-v3d in /boot/config.txt
+      replace:
+        path: /boot/config.txt
+        regexp: '^#(dtoverlay=vc4-kms-v3d)'
+        replace: '\1'
+      become: yes
+
+    - name: Uncomment max_framebuffers in /boot/config.txt
+      replace:
+        path: /boot/config.txt
+        regexp: '^#(max_framebuffers=2)'
+        replace: '\1'
+      become: yes
+
+    - name: Remove WiFi and Bluetooth lines from config.txt
+      lineinfile:
+        dest: /boot/config.txt
+        state: absent
+        line: "{{ item }}"
+      loop:
+        - dtoverlay=disable-wifi
+        - dtoverlay=disable-bt
+    
+    - name: Disable tvservice-off service
+      systemd:
+        name: tvservice-off.service
+        enabled: no
+        state: stopped
+
+    - name: Delete tvservice-off service file
+      file:
+        path: /etc/systemd/system/tvservice-off.service
+        state: absent
+
+    - name: Reload systemd
+      systemd:
+        daemon_reload: yes
+    
+    - name: Re-enable TV service port
+      command: /usr/bin/tvservice -p
+      become: yes
+
+    - name: Restart Nodes
+      reboot:
+      become: yes
+
+    - name: Wait for the Nodes to come back online
+      wait_for_connection:
+        delay: 10

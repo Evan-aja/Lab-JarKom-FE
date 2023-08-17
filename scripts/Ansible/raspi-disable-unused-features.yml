@@ -1,0 +1,78 @@
+---
+- name: Disable Features Playbook
+  hosts: docker_hosts
+  tasks:
+    - name: Restart Nodes
+      reboot:
+      become: yes
+
+    - name: Wait for the Nodes to come back online
+      wait_for_connection:
+        delay: 10
+
+    - name: Disable USB
+      shell: echo '1-1' |sudo tee /sys/bus/usb/drivers/usb/unbind
+      args:
+        executable: /bin/bash
+      become: yes
+
+    - name: Comment out vc4-kms-v3d in /boot/config.txt
+      replace:
+        path: /boot/config.txt
+        regexp: '^(dtoverlay=vc4-kms-v3d)'
+        replace: '#\1'
+      become: yes
+
+    - name: Comment out max_framebuffers in /boot/config.txt
+      replace:
+        path: /boot/config.txt
+        regexp: '^(max_framebuffers=2)'
+        replace: '#\1'
+      become: yes
+
+    - name: Disable WiFi and Bluetooth
+      lineinfile:
+        path: /boot/config.txt
+        line: '{{ item }}'
+      with_items:
+        - '[all]'
+        - 'dtoverlay=disable-wifi'
+        - 'dtoverlay=disable-bt'
+      become: yes
+
+
+    - name: Copy tvservice-off.service
+      copy:
+        content: |
+          [Unit]
+          Description=Turn off TV service
+          After=multi-user.target
+
+          [Service]
+          ExecStart=/usr/bin/tvservice -o
+          Type=oneshot
+          RemainAfterExit=yes
+
+          [Install]
+          WantedBy=multi-user.target
+        dest: /etc/systemd/system/tvservice-off.service
+      become: yes
+
+    - name: Reload systemd
+      systemd:
+        daemon_reload: yes
+      become: yes
+
+    - name: Enable tvservice-off service
+      systemd:
+        name: tvservice-off.service
+        enabled: yes
+      become: yes
+
+    - name: Restart Nodes
+      reboot:
+      become: yes
+
+    - name: Wait for the Nodes to come back online
+      wait_for_connection:
+        delay: 10
