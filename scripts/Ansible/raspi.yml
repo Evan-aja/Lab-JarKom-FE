@@ -4,8 +4,13 @@
   become: true
 
   tasks:
-  - name: Add memory cgroup to /boot/cmdline.txt
-    shell: sed -i 's/rootwait/rootwait cgroup_memory=1 cgroup_enable=memory/' /boot/cmdline.txt
+  - name: Add memory cgroup to /boot/cmdline.txt if not present
+    shell: |
+      if ! grep -q 'cgroup_memory=1 cgroup_enable=memory' /boot/cmdline.txt; then
+        sed -i 's/rootwait/rootwait cgroup_memory=1 cgroup_enable=memory/' /boot/cmdline.txt
+      fi
+    args:
+      warn: no
 
   - name: Restart Master Node
     reboot:
@@ -53,8 +58,13 @@
     set_fact:
       token: "{{ lookup('file', local_file_path) }}"
 
-  - name: Add memory cgroup to /boot/cmdline.txt
-    shell: sed -i 's/rootwait/rootwait cgroup_memory=1 cgroup_enable=memory/' /boot/cmdline.txt
+  - name: Add memory cgroup to /boot/cmdline.txt if not present
+    shell: |
+      if ! grep -q 'cgroup_memory=1 cgroup_enable=memory' /boot/cmdline.txt; then
+        sed -i 's/rootwait/rootwait cgroup_memory=1 cgroup_enable=memory/' /boot/cmdline.txt
+      fi
+    args:
+      warn: no
 
   - name: Restart Slave Nodes
     reboot:
