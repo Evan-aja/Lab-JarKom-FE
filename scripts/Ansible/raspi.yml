@@ -76,7 +76,7 @@
       delay: 10
 
   - name: Install K3s
-    shell: curl -sfL https://get.k3s.io | K3S_TOKEN="{{ token }}" K3S_URL="https://{{ hostvars[groups['docker_hosts_master'][0]]['inventory_hostname'] }}:6443" K3S_NODE_NAME="slave-{{ ansible_hostname }}" sh -
+    shell: curl -sfL https://get.k3s.io | K3S_TOKEN="{{ token }}" K3S_URL="https://{{ hostvars[groups['docker_hosts_master'][0]]['inventory_hostname'] }}:6443" K3S_NODE_NAME="{{ ansible_hostname }}" sh -
 
   - name: Restart Slave Nodes
     reboot:
